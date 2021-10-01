@@ -1,0 +1,100 @@
+{
+    "name": "Admiro Silva",
+    "email": "adm@gmail.com",
+    "password": "abrir"
+}
+{
+    "name": "Madara Uchiha",
+    "email": "abc@gmail.com",
+    "password": "12345"
+}
+    //post
+    //mostrar o erro do usuario não sendo o adm
+{
+    "login":{
+        "email": "abc@gmail.com",
+        "password": "12345"
+    },
+    "game":{
+        
+    }
+}
+
+    //esse é o adm
+{
+    "login":{
+        "email": "adm@gmail.com",
+        "password": "abrir"
+    },
+    "game":{
+
+    }
+}
+
+    //Game 1:
+{
+    "id": 1,
+    "name": "Metro Exodus",
+    "releaseDate": "19/9/2016",
+    "description": "Descobrir e contactar a vida fora dos metros de Moscow",
+    "soldCopies": 10956,
+    "distributor": "metros de Moscow",
+    "score": 85,
+    "price": 50.90,
+    "requirements":[
+        "i5",
+        "GTX 1650",
+        "10Gb"
+    ],
+    "genre": "FPS",
+    "DLC":[
+        "Sam's Story"
+    ],
+    "rating": 18,
+    "developer": "Artyom"
+}
+{
+    "id": 2,
+    "name": "The Witcher 3",
+    "releaseDate": "18/5/2015",
+    "description": "Encontrar a Siri, descer a mão na caçada selvagem e quests...muitas quests",
+    "soldCopies": 20523,
+    "distributor": "Bruxos da escola do lobo, SpeedTree",
+    "score": 95,
+    "price": 80,
+    "requirements":[
+        "i7 3770 3.4 GHz",
+        "GTX 770",
+        "35 Gb"
+        "8 GB de RAM"
+    ],
+    "genre": "RPG",
+    "DLC":[
+        "Blood and Wine",
+        "Heart of Stone"
+    ],
+    "rating": 16,
+    "Developer": "CD Projekt RED"
+}
+{
+    "id": 3,
+    "name": "Monster Hunter World",
+    "releaseDate": "9/8/2018",
+    "description": "Mata monstro, upa HR e MR e faz uma build que mate um Grate Jagras em 20s",
+    "soldCopies": 15620,
+    "distributor": "CAPCOM Co. e a moça que entrega Quests",
+    "score": 88,
+    "price": 70,
+    "requirements":[
+        "i7 3770 3.4 GHz",
+        "GTX 1650",
+        "48 Gb"
+        "8 GB de RAM"
+    ],
+    "genre": "RPG",
+    "DLC":[
+        "Iceborne",
+    ],
+    "rating": 12,
+    "Developer": "CAPCOM Co."
+}
