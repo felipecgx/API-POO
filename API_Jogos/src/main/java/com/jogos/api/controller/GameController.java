@@ -1,8 +1,7 @@
     package com.jogos.api.controller;
 
     import com.jogos.api.dto.GameDTO;
-    import com.jogos.api.dto.UserDTO;
-    import com.jogos.api.model.GeralEntity;
+    import com.jogos.api.model.GameEntity;
     import com.jogos.api.repository.GameRepository;
     import com.jogos.api.repository.UserRepository;
     import com.jogos.api.service.GameService;
@@ -25,13 +24,13 @@
         private UserRepository userRepository;
 
         @GetMapping("/getGame")
-        public List<GameDTO> getGame(@RequestBody UserDTO Login){
+        public List<GameDTO> getGame(){
             int retorno;
             List<GameDTO> vazio = new ArrayList<>();
 
-            retorno = userRepository.conferer(Login);
+            retorno = userRepository.LoginConferer();
 
-            if(retorno == 0){
+            if(retorno == 1){
                 return vazio;
             }
 
@@ -41,19 +40,18 @@
         }
 
         @PostMapping("/postGame")
-        public String postGame(@RequestBody GeralEntity Enty){
+        public String postGame(@RequestBody GameEntity game){
 
             int retorno;
             int retorno1;
 
-            retorno = userRepository.confererADM(Enty.getLogin());
+            retorno = userRepository.LoginConferer();
 
             if(retorno == 0){
                 return "Esse usuário não tem permição para esse comando";
             }
-            ////
 
-            retorno1 = service.validation(Enty.getGame());
+            retorno1 = service.validation(game);
 
             if(retorno1 == 1){
 
@@ -68,19 +66,18 @@
                 return "Número de copias negativas não pode";
             }
 
-
-            repository.save(Enty.getGame());
+            repository.save(game);
 
             return "Jogo adicionado com sucesso";
-            ////
+
         }
 
         @DeleteMapping("/deleteGame/{id}")
-        public String deleteGame(@PathVariable int id, @RequestBody UserDTO user){
+        public String deleteGame(@PathVariable int id){
 
             int retorno;
 
-            retorno = userRepository.confererADM(user);
+            retorno = userRepository.LoginConferer();
 
             if(retorno == 0){
                 return "Esse usuário não tem permição para esse comando";
@@ -92,20 +89,19 @@
         }
 
         @PutMapping("/updateGame/{id}")
-        public String updateGame(@PathVariable int id, @RequestBody GeralEntity Enty){
+        public String updateGame(@PathVariable int id, @RequestBody GameEntity game){
 
             int retorno;
 
-            retorno = userRepository.confererADM(Enty.getLogin());
+            retorno = userRepository.LoginConferer();
 
             if(retorno == 0){
                 return "Esse usuário não tem permição para esse comando";
             }
 
-            repository.update(id, Enty.getGame());
+            repository.update(id, game);
 
             return "Os dados do jogo foram atualizados";
         }
 
     }
-    //comentario

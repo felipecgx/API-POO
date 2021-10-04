@@ -18,6 +18,8 @@
 
         private List<UserEntity> ListUsers = new ArrayList<>();
 
+        private UserEntity login = new UserEntity();
+
         public void save(UserDTO user){
             UserEntity UserEnt;
 
@@ -26,7 +28,7 @@
             ListUsers.add(UserEnt);
         }
 
-        public int conferer(UserDTO user){
+        private int ListConferer(UserDTO user){
             UserEntity tmp;
 
             tmp = service.converter(user);
@@ -34,23 +36,54 @@
             for(int i = 0; i < ListUsers.size();i++){
                 UserEntity tmp1 = ListUsers.get(i);
 
-                if(tmp.getEmail().equals(tmp1.getEmail())){
+                if(tmp.getEmail().equals(tmp1.getEmail()) && tmp.getPassword().equals(tmp1.getPassword())){
                     return 1;
                 }
             }
             return 0;
         }
 
-        public int confererADM(UserDTO user){
-            UserEntity adm;
+        private int confererADM(){
 
-            adm = service.converter(user);
-
-            if(adm.getEmail().equals("adm@gmail.com") && adm.getPassword().equals("abrir")){
+            if(this.login.getEmail().equals("adm@gmail.com") && this.login.getPassword().equals("abrir")){
                 return 1;
             }
 
             return 0;
         }
+
+        public int login(UserDTO user){
+
+            int retorno;
+
+            retorno = ListConferer(user);
+
+            if(retorno == 0){
+                return 1;
+            }
+
+            this.login.setEmail(user.getEmail());
+            this.login.setPassword(user.getPassword());
+
+            return 0;
+        }
+
+        public int LoginConferer(){
+
+            int retorno;
+
+            if(this.login.getEmail() == null){
+                return 1;
+            }
+
+            retorno = confererADM();
+
+            if(retorno == 1){
+                return 2;
+            }
+
+            return 0;
+        }
+
     }
 
