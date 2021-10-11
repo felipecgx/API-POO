@@ -69,21 +69,15 @@
         }
 
         public int LoginConferer(){
-
             int retorno;
-
             if(this.login.getEmail() == null){
                 return 1;
             }
-
             retorno = confererADM();
-
             if(retorno == 1){
                 return 2;
             }
-
             return 0;
         }
-
     }
 

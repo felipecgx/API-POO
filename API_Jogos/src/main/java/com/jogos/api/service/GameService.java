@@ -29,7 +29,7 @@
                 dto.setReleaseDate(tmp.getReleaseDate());//
                 dto.setDescription(tmp.getDescription());//nao precisa
                 dto.setDeveloper(tmp.getDeveloper());//
-                dto.setDistributor(tmp.getDistributor());//nao
+                //dto.setDistributor(tmp.getDistributor());//nao
                 dto.setScore(tmp.getScore());//
                 dto.setPrice(tmp.getPrice());//
                 dto.setRequirements(tmp.getRequirements());//nao precisa
@@ -43,7 +43,7 @@
             return ListGames;
         }
 
-        public int validation(GameEntity Enty){
+        public int validation(GameEntity Enty){ // exemplo de encapsulamento
 
             if(Enty.getId() < 0){//se for negativo da erro
                 return 1;

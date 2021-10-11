@@ -41,7 +41,7 @@
 
         public void update(int iden, GameEntity game){
 
-            for(int i = 0; i < ListGames.size(); i++){
+            for(int i = 0; i < ListGames.size(); i++){// atualiza os dados de tudo num jogo pelos SETS
                 GameEntity tmp = ListGames.get(i);
 
                 if(tmp.getId() == iden){

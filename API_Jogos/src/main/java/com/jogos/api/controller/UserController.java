@@ -5,10 +5,10 @@
     import com.jogos.api.repository.UserRepository;
     import com.jogos.api.service.UserService;
     import org.springframework.beans.factory.annotation.Autowired;
-    import org.springframework.web.bind.annotation.GetMapping;
-    import org.springframework.web.bind.annotation.PostMapping;
-    import org.springframework.web.bind.annotation.RequestBody;
-    import org.springframework.web.bind.annotation.RestController;
+    import org.springframework.http.ResponseEntity;
+    import org.springframework.web.bind.annotation.*;
+
+    import java.util.List;
 
     @RestController
     public class UserController {
@@ -38,11 +38,23 @@
             return "Usuario adicionado";
         }
 
+        //retornar lista de usuários
+        /*@GetMapping("Users")
+        public ResponseEntity<List<UserDTO>> getUsers(@RequestParam(required = false)String name){
+            List<UserDTO> lista = service.getUsers(name);
+            if (lista.isEmpty()) {
+                return ResponseEntity.notFound().build();
+            }
+            return ResponseEntity.ok(lista);
+        }*/
+
+
+
+
         @PostMapping("/login")
         public String login(@RequestBody UserDTO User) {
 
             int retorno;
-
             retorno = repository.login(User);
 
             if (retorno == 1) {
@@ -50,6 +62,7 @@
             } else {
                 return "Login efetuado com sucesso";
             }
+            //mensagens de erro e etc
         }
 
     }

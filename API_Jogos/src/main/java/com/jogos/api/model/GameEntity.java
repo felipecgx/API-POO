@@ -1,13 +1,23 @@
     package com.jogos.api.model;
 
+    import javax.persistence.*;
     import java.util.Date;
     import java.util.List;
 
+    //@Entity
+    //@Table(name = "Games")
     public class GameEntity {
 
-        //foto
-        private int id;
+        //@Id////////////////qualquer erro aqui, retirar os baguho amarelo
+        //@Column(name= "ID", nullable = false)
+        //@GeneratedValue(strategy = GenerationType.IDENTITY)//Auto increment
+        private int id; // ou fazer Long depois
+
+       // @Column(name = "NAME", nullable = false)      isso é para fazer a integração na tabela
+        // assim que digitar o game no POSTMAN, a ideia é adicionar os valores na tabela automaticamente
         private String name;
+
+        //editar o resto para o banco de dados
         private String releaseDate;
         private String description;
         private String developer;
@@ -16,11 +26,13 @@
         private String distributor;
         private int score;
         private float price;
-        private List<String> requirements;
+        private List<String> requirements; //dando erro
         private String genre;
-        private List<String> DLC;
+        private List<String> DLC; //e aqui
         private int rating;//faixa etária
 
+
+        //dando erro nos ID tbm, depois conferir
         public int getId() {
             return id;
         }
@@ -28,6 +40,8 @@
         public void setId(int id) {
             this.id = id;
         }
+
+
 
         public String getName() {
             return name;
