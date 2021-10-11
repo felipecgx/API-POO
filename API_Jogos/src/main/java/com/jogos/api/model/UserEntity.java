@@ -18,7 +18,7 @@
         @Column(name = "EMAIL", nullable = false)
         private String email;
 
-        @Column(name = "SENHA", nullable = false)
+        @Column(name = "SENHA", nullable = false)//not null no MySQL
         private String password;
 
         @Id

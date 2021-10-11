@@ -20,7 +20,7 @@
                 return 1;
             }
             if(!user.getEmail().contains("@")){//mudar as validações do email 1h 37min Aula 06
-                return 2;
+                return 2;//usar
             }
             if(validatePassword(user.getPassword())==false){//usar métodos privados para validar (encapsulamento)
                 return 3;   //se a validação for false, entra e retorna o erro

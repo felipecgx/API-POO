@@ -40,11 +40,12 @@
                 ListGames.add(dto);
             }
 
-            return ListGames;
+            return ListGames;//
         }
 
         public int validation(GameEntity Enty){ // exemplo de encapsulamento
 
+            //*pode não ser encapsulamento*
             if(Enty.getId() < 0){//se for negativo da erro
                 return 1;
             }

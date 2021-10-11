@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS Games(
     Price INT NOT NULL,
     Requirements VARCHAR (255),
     Genre VARCHAR (255) NOT NULL ,
-    Dlc VARCHAR (255),
+    Dlc VARCHAR (255),/*à mudar*/
     Rating INT NOT NULL
 );
 
