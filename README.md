@@ -12,6 +12,7 @@ O projeto consiste na construção de uma API para organização de informaçõe
 * Gênero do jogo
 * Nota no MetaCritic
 * Plataformas
+* DLC
 
 
 Dentre outras informações.
