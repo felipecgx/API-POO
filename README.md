@@ -21,3 +21,4 @@ Dentre outras informações.
 
 1. JAVA 11
 2. Spring Boot
+3. IntelliJ
