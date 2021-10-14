@@ -10,15 +10,13 @@
     @Table(name = "Users")
     public class UserEntity{
 
-        //vincular as classes entity para representar cada instancia da classe (cada objeto)
-        //para representar uma linha no banco de dados
         @Column(name = "NAME", nullable = false)
         private String name;
 
         @Column(name = "EMAIL", nullable = false)
         private String email;
 
-        @Column(name = "SENHA", nullable = false)//not null no MySQL
+        @Column(name = "PASSWORD", nullable = false)//not null no MySQL
         private String password;
 
         @Id
@@ -26,11 +24,6 @@
         @GeneratedValue(strategy = GenerationType.IDENTITY)//Auto increment
         private Long id;
 
-        //vinculado a tabela
-
-
-
-        //gets e sets para acessar os campos PRIVATE (encapsulamento)
         public String getName() {
             return name;
         }
@@ -53,5 +46,13 @@
 
         public void setPassword(String password) {
             this.password = password;
+        }
+
+        public Long getId() {
+            return id;
+        }
+
+        public void setId(Long id) {
+            this.id = id;
         }
     }

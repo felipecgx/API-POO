@@ -20,14 +20,6 @@
 
         private UserEntity login = new UserEntity();
 
-        public void save(UserDTO user){
-            UserEntity UserEnt;
-
-            UserEnt = service.converter(user);
-
-            ListUsers.add(UserEnt);
-        }
-
         private int ListConferer(UserDTO user){
             UserEntity tmp;
 

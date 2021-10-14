@@ -2,6 +2,7 @@
 
     import com.jogos.api.dto.UserDTO;
     import com.jogos.api.model.UserEntity;
+    import com.jogos.api.repository.UserInterfaceRepository;
     import com.jogos.api.repository.UserRepository;
     import com.jogos.api.service.UserService;
     import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +20,13 @@
         @Autowired
         private UserRepository repository;
 
+        @Autowired
+        private UserInterfaceRepository repo;
+
         @PostMapping("/signup")
         public String signup(@RequestBody UserDTO User){
             int retorno;
+            UserEntity Entity;
 
             retorno = service.signup(User);
 
@@ -33,23 +38,8 @@
                 return "senha muito curta";
             }
 
-            repository.save(User);
-
             return "Usuario adicionado";
         }
-
-        //retornar lista de usuários
-        /*@GetMapping("Users")
-        public ResponseEntity<List<UserDTO>> getUsers(@RequestParam(required = false)String name){
-            List<UserDTO> lista = service.getUsers(name);
-            if (lista.isEmpty()) {
-                return ResponseEntity.notFound().build();
-            }
-            return ResponseEntity.ok(lista);
-        }*/
-
-
-
 
         @PostMapping("/login")
         public String login(@RequestBody UserDTO User) {
@@ -64,5 +54,15 @@
             }
             //mensagens de erro e etc
         }
+
+        //retornar lista de usuários
+        /*@GetMapping("Users")
+        public ResponseEntity<List<UserDTO>> getUsers(@RequestParam(required = false)String name){
+            List<UserDTO> lista = service.getUsers(name);
+            if (lista.isEmpty()) {
+                return ResponseEntity.notFound().build();
+            }
+            return ResponseEntity.ok(lista);
+        }*/
 
     }
