@@ -45,15 +45,17 @@
         public String login(@RequestBody UserDTO User) {
 
             int retorno;
-            retorno = repository.login(User);
+            //retorno = repository.login(User);
+            retorno = service.login(User);
 
-            if (retorno == 1) {
-                return "Usuario não encontrado";
-            } else {
+            if (retorno == 1 || retorno == 3) {
+                return "Login incorreto usuario não encontrado";
+            }else{
                 return "Login efetuado com sucesso";
             }
-            //mensagens de erro e etc
+
         }
+
 
         //retornar lista de usuários
         /*@GetMapping("Users")

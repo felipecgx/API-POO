@@ -5,6 +5,7 @@
     import com.jogos.api.repository.GameRepository;
     import com.jogos.api.repository.UserRepository;
     import com.jogos.api.service.GameService;
+    import com.jogos.api.service.UserService;
     import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.web.bind.annotation.*;
 
@@ -24,14 +25,14 @@
         private GameService service;
 
         @Autowired
-        private UserRepository userRepository;
+        private UserService userService;
 
         @GetMapping("/getGame")
         public List<GameDTO> getGame(){
             int retorno;
             List<GameDTO> vazio = new ArrayList<>();
 
-            retorno = userRepository.LoginConferer();
+            retorno = userService.loginConferer();
 
             if(retorno == 1){
                 return vazio;
@@ -48,7 +49,7 @@
             int retorno;
             int retorno1;
 
-            retorno = userRepository.LoginConferer();
+            retorno = userService.loginConferer();
 
             if(retorno == 0){
                 return "Esse usuário não tem permição para esse comando";
@@ -93,7 +94,7 @@
 
             int retorno;
 
-            retorno = userRepository.LoginConferer();
+            retorno = userService.loginConferer();
 
             if(retorno == 0){
                 return "Esse usuário não tem permição para esse comando";
@@ -109,7 +110,7 @@
 
             int retorno;
 
-            retorno = userRepository.LoginConferer();
+            retorno = userService.loginConferer();
 
             if(retorno == 0){
                 return "Esse usuário não tem permição para esse comando";

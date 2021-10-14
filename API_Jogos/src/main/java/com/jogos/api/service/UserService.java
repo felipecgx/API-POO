@@ -6,6 +6,8 @@
     import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.stereotype.Service;
 
+    import java.sql.SQLOutput;
+    import java.util.Optional;
     import java.util.regex.Matcher;
     import java.util.regex.Pattern;
 
@@ -15,6 +17,8 @@
 
         @Autowired
         private UserInterfaceRepository userInterfaceRepo;
+
+        private UserEntity login = new UserEntity();
 
         public static final Pattern VALID_EMAIL_ADDRESS_REGEX =
                 Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
@@ -44,6 +48,44 @@
             return 0;
         }
 
+        public int login(UserDTO user) {
+
+            String filter = user.getEmail() != null ? user.getEmail() : "";
+            Optional<UserEntity> entity = userInterfaceRepo.findByEmailIgnoreCase(filter);
+
+            if (entity.isPresent()) {
+                UserEntity enty = entity.get();
+
+                if(!enty.getPassword().equals(user.getPassword())){
+                    return 1;
+                }
+
+                login.setId(enty.getId());
+                login.setName(enty.getName());
+                login.setEmail(enty.getEmail());
+                login.setPassword(enty.getPassword());
+
+                return 2;
+            } else {
+                return 3;
+            }
+
+         }
+
+        public int loginConferer(){
+
+            int retorno;
+            retorno = ADMConferer();
+
+            if(this.login.getEmail() == null){
+                return 1;
+            }else if(retorno == 1){
+                return 2;
+            }else{
+                return 0;
+            }
+        }
+
         public UserEntity converter(UserDTO dto){
             UserEntity entity = new UserEntity();
 
@@ -58,7 +100,7 @@
         private boolean validatePassword(String senha){//executar um método passando por cima da classe pai = polimorfismo
            if(senha.length() < 4){
                return false;
-               //pelo menos 2 numeros e 1 caracter maiusculo e minusculo
+               //TODO: CRIAR REGEX PARA A SENHA
            }else{
                return true;
            }
@@ -83,6 +125,16 @@
                 return true;
             }
         }
+
+        private int ADMConferer(){
+
+            if(this.login.getEmail().equals("adm@gmail.com") && this.login.getPassword().equals("abrir")){
+                return 1;
+            }else{
+                return 0;
+            }
+        }
+
 
         /*public List<UserDTO> getUsers(String name) {
             String filter = name != null ? name : "";
