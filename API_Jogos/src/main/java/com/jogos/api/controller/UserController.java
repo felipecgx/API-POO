@@ -3,7 +3,6 @@
     import com.jogos.api.dto.UserDTO;
     import com.jogos.api.model.UserEntity;
     import com.jogos.api.repository.UserInterfaceRepository;
-    import com.jogos.api.repository.UserRepository;
     import com.jogos.api.service.UserService;
     import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.http.ResponseEntity;
@@ -17,16 +16,9 @@
         @Autowired
         private UserService service;
 
-        @Autowired
-        private UserRepository repository;
-
-        @Autowired
-        private UserInterfaceRepository repo;
-
         @PostMapping("/signup")
         public String signup(@RequestBody UserDTO User){
             int retorno;
-            UserEntity Entity;
 
             retorno = service.signup(User);
 
@@ -45,7 +37,7 @@
         public String login(@RequestBody UserDTO User) {
 
             int retorno;
-            //retorno = repository.login(User);
+
             retorno = service.login(User);
 
             if (retorno == 1 || retorno == 3) {

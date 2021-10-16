@@ -4,43 +4,65 @@
     import java.util.Date;
     import java.util.List;
 
-    //@Entity
-    //@Table(name = "Games")
+    @Entity
+    @Table(name = "Games")
     public class GameEntity {
 
-        //@Id////////////////qualquer erro aqui, retirar os baguho amarelo
-        //@Column(name= "ID", nullable = false)
-        //@GeneratedValue(strategy = GenerationType.IDENTITY)//Auto increment
-        private int id; // ou fazer Long depois
+        @Id
+        @Column(name= "ID", nullable = false)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
 
-       // @Column(name = "NAME", nullable = false)      isso é para fazer a integração na tabela
-        // assim que digitar o game no POSTMAN, a ideia é adicionar os valores na tabela automaticamente
+        @Column(name = "name", nullable = false)
         private String name;
 
-        //editar o resto para o banco de dados
-        private String releaseDate;
+        @Column(name = "releaseDate", nullable = false)
+        private Date releaseDate;
+
+        @Column(name = "description", nullable = false)
         private String description;
+
+        @Column(name = "developer", nullable = false)
         private String developer;
+
+        @Column(name = "peopleInvolved", nullable = false)
         private int peopleInvolved;
+
+        @Column(name = "soldCopies", nullable = false)
         private int soldCopies;
+
+        @Column(name = "distributor", nullable = false)
         private String distributor;
+
+        @Column(name = "score", nullable = false)
         private int score;
-        private float price;
-        private List<String> requirements; //dando erro
+
+        @Column(name = "price", nullable = false, scale = 2)
+        private Double price;
+
+        @Column(name = "genre", nullable = false)
         private String genre;
-        private List<String> DLC; //e aqui
-        private int rating;//faixa etária
 
+        @Column(name = "rating", nullable = false)
+        private int rating;
 
-        //dando erro nos ID tbm, depois conferir
-        public int getId() {
-            return id;
+        public GameEntity() {
+
         }
 
-        public void setId(int id) {
-            this.id = id;
+        public GameEntity(String name, Date releaseDate, String description, String developer, int peopleInvolved, int soldCopies, String distributor, int score, Double price, String genre, int rating) {
+            this.name = name;
+            this.releaseDate = releaseDate;
+            this.description = description;
+            this.developer = developer;
+            this.peopleInvolved = peopleInvolved;
+            this.soldCopies = soldCopies;
+            this.distributor = distributor;
+            this.score = score;
+            this.price = price;
+            this.genre = genre;
+            this.rating = rating;
         }
-
 
         public String getName() {
             return name;
@@ -90,20 +112,12 @@
             this.distributor = distributor;
         }
 
-        public float getPrice() {
+        public Double getPrice() {
             return price;
         }
 
-        public void setPrice(float price) {
+        public void setPrice(Double price) {
             this.price = price;
-        }
-
-        public List<String> getRequirements() {
-            return requirements;
-        }
-
-        public void setRequirements(List<String> requirements) {
-            this.requirements = requirements;
         }
 
         public String getGenre() {
@@ -114,14 +128,6 @@
             this.genre = genre;
         }
 
-        public List<String> getDLC() {
-            return DLC;
-        }
-
-        public void setDLC(List<String> DLC) {
-            this.DLC = DLC;
-        }
-
         public int getRating() {
             return rating;
         }
@@ -130,11 +136,11 @@
             this.rating = rating;
         }
 
-        public String getReleaseDate() {
+        public Date getReleaseDate() {
             return releaseDate;
         }
 
-        public void setReleaseDate(String releaseDate) {
+        public void setReleaseDate(Date releaseDate) {
             this.releaseDate = releaseDate;
         }
 
@@ -144,5 +150,13 @@
 
         public void setScore(int score) {
             this.score = score;
+        }
+
+        public Long getId() {
+            return id;
+        }
+
+        public void setId(Long id) {
+            this.id = id;
         }
     }

@@ -1,23 +1,18 @@
     package com.jogos.api.dto;
 
     import java.util.Date;
-    import java.util.List;
 
     public class GameDTO {
 
         private String name;
-        private String releaseDate;
+        private Date releaseDate;
         private String description;
         private String developer;
         private String distributor;
         private int score;
-        private float price;
-        private List<String> requirements;
+        private Double price;
         private String genre;
-        private List<String> DLC;
         private int rating;
-        //private int peopleInvolved;
-        //private int soldCopies;
 
         public String getName() {
             return name;
@@ -51,20 +46,12 @@
             this.distributor = distributor;
         }
 
-        public float getPrice() {
+        public Double getPrice() {
             return price;
         }
 
-        public void setPrice(float price) {
+        public void setPrice(Double price) {
             this.price = price;
-        }
-
-        public List<String> getRequirements() {
-            return requirements;
-        }
-
-        public void setRequirements(List<String> requirements) {
-            this.requirements = requirements;
         }
 
         public String getGenre() {
@@ -75,14 +62,6 @@
             this.genre = genre;
         }
 
-        public List<String> getDLC() {
-            return DLC;
-        }
-
-        public void setDLC(List<String> DLC) {
-            this.DLC = DLC;
-        }
-
         public int getRating() {
             return rating;
         }
@@ -91,19 +70,19 @@
             this.rating = rating;
         }
 
-        public String getReleaseDate() {
-            return releaseDate;
-        }
-
-        public void setReleaseDate(String releaseDate) {
-            this.releaseDate = releaseDate;
-        }
-
         public int getScore() {
             return score;
         }
 
         public void setScore(int score) {
             this.score = score;
+        }
+
+        public Date getReleaseDate() {
+            return releaseDate;
+        }
+
+        public void setReleaseDate(Date releaseDate) {
+            this.releaseDate = releaseDate;
         }
     }
