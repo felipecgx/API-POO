@@ -1,14 +1,9 @@
     package com.jogos.api.controller;
 
     import com.jogos.api.dto.UserDTO;
-    import com.jogos.api.model.UserEntity;
-    import com.jogos.api.repository.UserInterfaceRepository;
     import com.jogos.api.service.UserService;
     import org.springframework.beans.factory.annotation.Autowired;
-    import org.springframework.http.ResponseEntity;
     import org.springframework.web.bind.annotation.*;
-
-    import java.util.List;
 
     @RestController
     public class UserController {

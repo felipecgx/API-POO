@@ -2,7 +2,7 @@
 
     import com.jogos.api.dto.GameDTO;
     import com.jogos.api.model.GameEntity;
-    import com.jogos.api.repository.GameInterfaceRepository;
+    import com.jogos.api.repository.GameRepository;
     import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.stereotype.Service;
 
@@ -15,7 +15,7 @@
     public class GameService{
 
         @Autowired
-        private GameInterfaceRepository repo;
+        private GameRepository repo;
 
         public List<GameDTO> getGames() {
             List<GameDTO> ListGames = new ArrayList<>();
@@ -35,6 +35,7 @@
                 dto.setPrice(tmp.getPrice());
                 dto.setGenre(tmp.getGenre());
                 dto.setRating(tmp.getRating());
+                dto.setHasDLC(tmp.isHasDLC());
 
                 ListGames.add(dto);
             }
@@ -104,6 +105,7 @@
                 enty_update.setPrice(Entity.getPrice());
                 enty_update.setGenre(Entity.getGenre());
                 enty_update.setRating(Entity.getRating());
+                enty_update.setHasDLC(Entity.isHasDLC());
 
                 repo.save(enty_update);
             }

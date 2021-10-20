@@ -2,16 +2,18 @@
 
     import javax.persistence.*;
     import java.util.Date;
-    import java.util.List;
 
     @Entity
-    @Table(name = "Games")
-    public class GameEntity {
+    @Table(name = "DLC")
+    public class DLCEntity {
 
         @Id
         @Column(name= "ID", nullable = false)
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
+
+        @Column(name = "ownedGame", nullable = false)
+        private String ownedGame;
 
         @Column(name = "name", nullable = false)
         private String name;
@@ -46,26 +48,20 @@
         @Column(name = "rating", nullable = false)
         private int rating;
 
-        @Column(name = "hasDLC")
-        private boolean hasDLC;
-
-        public GameEntity() {
-
+        public Long getId() {
+            return id;
         }
 
-        public GameEntity(String name, Date releaseDate, String description, String developer, int peopleInvolved, int soldCopies, String distributor, int score, Double price, String genre, int rating, boolean hasDLC) {
-            this.name = name;
-            this.releaseDate = releaseDate;
-            this.description = description;
-            this.developer = developer;
-            this.peopleInvolved = peopleInvolved;
-            this.soldCopies = soldCopies;
-            this.distributor = distributor;
-            this.score = score;
-            this.price = price;
-            this.genre = genre;
-            this.rating = rating;
-            this.hasDLC = hasDLC;
+        public void setId(Long id) {
+            this.id = id;
+        }
+
+        public String getOwnedGame() {
+            return ownedGame;
+        }
+
+        public void setOwnedGame(String ownedGame) {
+            this.ownedGame = ownedGame;
         }
 
         public String getName() {
@@ -74,6 +70,14 @@
 
         public void setName(String name) {
             this.name = name;
+        }
+
+        public Date getReleaseDate() {
+            return releaseDate;
+        }
+
+        public void setReleaseDate(Date releaseDate) {
+            this.releaseDate = releaseDate;
         }
 
         public String getDescription() {
@@ -116,6 +120,14 @@
             this.distributor = distributor;
         }
 
+        public int getScore() {
+            return score;
+        }
+
+        public void setScore(int score) {
+            this.score = score;
+        }
+
         public Double getPrice() {
             return price;
         }
@@ -138,37 +150,5 @@
 
         public void setRating(int rating) {
             this.rating = rating;
-        }
-
-        public Date getReleaseDate() {
-            return releaseDate;
-        }
-
-        public void setReleaseDate(Date releaseDate) {
-            this.releaseDate = releaseDate;
-        }
-
-        public int getScore() {
-            return score;
-        }
-
-        public void setScore(int score) {
-            this.score = score;
-        }
-
-        public Long getId() {
-            return id;
-        }
-
-        public void setId(Long id) {
-            this.id = id;
-        }
-
-        public boolean isHasDLC() {
-            return hasDLC;
-        }
-
-        public void setHasDLC(boolean hasDLC) {
-            this.hasDLC = hasDLC;
         }
     }

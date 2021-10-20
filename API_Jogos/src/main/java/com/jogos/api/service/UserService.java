@@ -2,11 +2,10 @@
 
     import com.jogos.api.dto.UserDTO;
     import com.jogos.api.model.UserEntity;
-    import com.jogos.api.repository.UserInterfaceRepository;
+    import com.jogos.api.repository.UserRepository;
     import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.stereotype.Service;
 
-    import java.sql.SQLOutput;
     import java.util.Optional;
     import java.util.regex.Matcher;
     import java.util.regex.Pattern;
@@ -16,11 +15,15 @@
     public class UserService {
 
         @Autowired
-        private UserInterfaceRepository userInterfaceRepo;
+        private UserRepository userInterfaceRepo;
 
         private UserEntity login = new UserEntity();
 
-        public static final Pattern VALID_EMAIL_ADDRESS_REGEX =
+        private static final String PASSWORD_PATTERN = "^.*(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%]).{6,}.*$";
+
+        private static final Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
+
+        private static final Pattern VALID_EMAIL_ADDRESS_REGEX =
                 Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
 
@@ -97,13 +100,9 @@
             return entity;
         }
 
-        private boolean validatePassword(String senha){//executar um método passando por cima da classe pai = polimorfismo
-           if(senha.length() < 4){
-               return false;
-               //TODO: CRIAR REGEX PARA A SENHA
-           }else{
-               return true;
-           }
+        private boolean validatePassword(String senha){
+           Matcher matcher = pattern.matcher(senha);
+           return matcher.matches();
         }
 
         private int validateEmail(String email){
@@ -128,7 +127,7 @@
 
         private int ADMConferer(){
 
-            if(this.login.getEmail().equals("adm@gmail.com") && this.login.getPassword().equals("abrir")){
+            if(this.login.getEmail().equals("adm@gmail.com") && this.login.getPassword().equals("@Bbr1rr")){
                 return 1;
             }else{
                 return 0;

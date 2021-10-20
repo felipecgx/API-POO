@@ -2,7 +2,7 @@
 
     import com.jogos.api.dto.GameDTO;
     import com.jogos.api.model.GameEntity;
-    import com.jogos.api.repository.GameInterfaceRepository;
+    import com.jogos.api.repository.GameRepository;
     import com.jogos.api.service.GameService;
     import com.jogos.api.service.UserService;
     import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@
         private UserService userService;
 
         @Autowired
-        private GameInterfaceRepository repo;
+        private GameRepository repo;
 
         @GetMapping("/getGame")
         public List<GameDTO> getGame(){

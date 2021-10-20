@@ -17,7 +17,7 @@ import java.util.Optional;
         https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods
  */
 
-public interface UserInterfaceRepository extends JpaRepository<UserEntity, Long> { //herança
+public interface UserRepository extends JpaRepository<UserEntity, Long> { //herança
 
     Optional<UserEntity> findByEmailIgnoreCase(String email);
     Optional<List<UserEntity>> findByNameContaining(String name);
