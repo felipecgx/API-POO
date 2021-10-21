@@ -1,11 +1,11 @@
-package com.jogos.api.repository;
+    package com.jogos.api.repository;
 
-import com.jogos.api.model.GameEntity;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
+    import com.jogos.api.model.GameEntity;
+    import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface GameRepository extends JpaRepository<GameEntity, Long> {
+    import java.util.Optional;
 
+    public interface GameRepository extends JpaRepository<GameEntity, Long> {
 
-
-}
+        Optional<GameEntity> findByName(String name);
+    }

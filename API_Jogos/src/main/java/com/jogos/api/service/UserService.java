@@ -31,7 +31,7 @@
 
             UserEntity entity = new UserEntity();
 
-            if(validateName(user.getName())==false){
+            if(!validateName(user.getName())){
                 return 1;
             }
             if(validateEmail(user.getEmail()) == 1){
