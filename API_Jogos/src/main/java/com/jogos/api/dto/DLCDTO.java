@@ -2,7 +2,7 @@
 
     import java.util.Date;
 
-    public class DLCDTO {
+    public class DLCDTO extends GameDTO{ // MUDAR DLC PARA EXTENDS
 
         private Long id;
         private String ownedGame;

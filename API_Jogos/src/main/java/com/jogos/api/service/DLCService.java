@@ -15,7 +15,7 @@
 
     @Service
 
-    public class DLCService {
+    public class DLCService extends GameService{ //ALTERAR DLC PARA EXTENDS
 
         @Autowired
         private DLCRepository repo;

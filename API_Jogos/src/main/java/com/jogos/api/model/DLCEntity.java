@@ -5,7 +5,10 @@
 
     @Entity
     @Table(name = "DLC")
-    public class DLCEntity {
+    public class DLCEntity extends GameEntity { // MUDAR A PARTE DE DLC PARA O EXTENDS
+
+        // IGUAIS=   id/name/releaseDate/description/developer/peopleInvolved/soldCopies/distributor
+        //           score/price/genre/rating
 
         @Id
         @Column(name= "ID", nullable = false)
