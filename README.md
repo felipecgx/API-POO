@@ -19,6 +19,15 @@ Dentre outras informações.
 
 ### Tecnologias Utilizadas
 
+<div style="display: inline_block"><br>
+  <img align="center" alt="May-Java" height="60" width="60" src="https://github.com/devicons/devicon/blob/master/icons/java/java-original.svg">
+  <img align="center"  alt="May-Jetbrains" height="60" width="60" src="https://github.com/devicons/devicon/blob/master/icons/jetbrains/jetbrains-original.svg">
+  <img align="center"  alt="May-Spring" height="60" width="60" src="https://github.com/devicons/devicon/blob/master/icons/spring/spring-original-wordmark.svg">
+  <img align="right"  alt="May-img" height="240" width="240" src="https://icon-library.com/images/ps4-icon-png/ps4-icon-png-18.jpg">
+  
+</div>
+  
+
 1. JAVA 11
 2. Spring Boot
 3. IntelliJ
