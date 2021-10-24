@@ -45,7 +45,7 @@
         private int score;
 
         @Column(name = "price", nullable = false, scale = 2)
-        private Double price;
+        private float price;
 
         @Column(name = "genre", nullable = false)
         private String genre;

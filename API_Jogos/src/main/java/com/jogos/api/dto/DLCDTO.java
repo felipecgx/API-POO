@@ -43,7 +43,7 @@
 
         // deixar isso para mostrar para o professor como exemplo
 
-        /*  // TODO ESSE CÓDICO NÃO PRECISA POR CAUSA DO EXTENDS
+        /*  // TODO ESSE CÓDIGO NÃO PRECISA POR CAUSA DO EXTENDS
                ISSO FOI FEITO PARA ECONOMIZAR FUNÇÕES E LINHAS DE CÓDIGO
 
 

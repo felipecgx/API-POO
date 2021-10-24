@@ -12,7 +12,7 @@
     import java.util.List;
 
     @RestController
-    public class DLCController extends GameController{ // é um tipo de game controller
+    public class DLCController {
 
         @Autowired
         private UserService uservice;

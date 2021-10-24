@@ -1,8 +1,7 @@
     package com.jogos.api.model;
 
     import javax.persistence.*;
-    import java.util.Date;
-    import java.util.List;
+    import java.util.Date;// para usar a data em Release Date
 
     @Entity
     @Table(name = "Games")
@@ -38,7 +37,7 @@
         private int score;
 
         @Column(name = "price", nullable = false, scale = 2)
-        private Double price;
+        private float price;
 
         @Column(name = "genre", nullable = false)
         private String genre;
@@ -49,14 +48,17 @@
         @Column(name = "hasDLC")
         private boolean hasDLC;
 
-        public GameEntity() {
+        public GameEntity() {//construtor
 
         }
 
-        public GameEntity(String name, Date releaseDate, String description,
-                          String developer, int peopleInvolved, int soldCopies,
-                          String distributor, int score, Double price,
-                          String genre, int rating, boolean hasDLC     ) {
+        ///não esta sendo utilizado
+
+        /*public GameEntity(String name,        Date releaseDate,   String description,
+                          String developer,   int peopleInvolved, int soldCopies,
+                          String distributor, int score,          float price,
+                          String genre,       int rating,         boolean hasDLC ) {  //construtor não retorna valor
+
             this.name = name;
             this.releaseDate = releaseDate;
             this.description = description;
@@ -69,7 +71,12 @@
             this.genre = genre;
             this.rating = rating;
             this.hasDLC = hasDLC;
-        }
+        }*/
+        //
+
+
+
+        //GETS E SETS DO GAME ENTITY
 
         public String getName() {
             return name;
@@ -119,11 +126,11 @@
             this.distributor = distributor;
         }
 
-        public Double getPrice() {
+        public float getPrice() {
             return price;
         }
 
-        public void setPrice(Double price) {
+        public void setPrice(float price) {
             this.price = price;
         }
 

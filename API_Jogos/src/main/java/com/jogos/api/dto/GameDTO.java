@@ -10,7 +10,7 @@
         private String developer;
         private String distributor;
         private int score;
-        private Double price;
+        private float price;
         private String genre;
         private int rating;
         private boolean hasDLC;
@@ -47,11 +47,11 @@
             this.distributor = distributor;
         }
 
-        public Double getPrice() {
+        public float getPrice() {
             return price;
         }
 
-        public void setPrice(Double price) {
+        public void setPrice(float price) {
             this.price = price;
         }
 
