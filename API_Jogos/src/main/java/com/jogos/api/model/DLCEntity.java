@@ -5,10 +5,12 @@
 
     @Entity
     @Table(name = "DLC")
-    public class DLCEntity extends GameEntity { // MUDAR A PARTE DE DLC PARA O EXTENDS
+    public class DLCEntity extends GameEntity { //HERANÇA COM EXTENDS
 
-        // IGUAIS=   id/name/releaseDate/description/developer/peopleInvolved/soldCopies/distributor
+        // IGUAIS=   name/releaseDate/description/developer/peopleInvolved/soldCopies/distributor
         //           score/price/genre/rating
+
+        // DIFERENTES=  id/ ownedGame  -> Game tem o hasDLC
 
         @Id
         @Column(name= "ID", nullable = false)
@@ -51,6 +53,8 @@
         @Column(name = "rating", nullable = false)
         private int rating;
 
+
+
         public Long getId() {
             return id;
         }
@@ -66,6 +70,12 @@
         public void setOwnedGame(String ownedGame) {
             this.ownedGame = ownedGame;
         }
+
+
+
+
+
+        /*         NAO PRECISA
 
         public String getName() {
             return name;
@@ -154,4 +164,5 @@
         public void setRating(int rating) {
             this.rating = rating;
         }
+        */
     }

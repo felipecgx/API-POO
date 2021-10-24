@@ -16,7 +16,7 @@
 
     @Service
 
-    public class DLCService extends GameService{ //ALTERAR DLC PARA EXTENDS
+    public class DLCService extends GameService{ //ALTERAR COM EXTENDS
 
         @Autowired
         private DLCRepository repo;
@@ -81,6 +81,8 @@
                 DLCEntity enty_update = enty.get();
 
                 enty_update.setOwnedGame(DLC.getOwnedGame());
+
+                //não mudou mesmo apagando as funções no dlc entity
                 enty_update.setName(DLC.getName());
                 enty_update.setReleaseDate(DLC.getReleaseDate());
                 enty_update.setDescription(DLC.getDescription());
@@ -92,6 +94,7 @@
                 enty_update.setPrice(DLC.getPrice());
                 enty_update.setGenre(DLC.getGenre());
                 enty_update.setRating(DLC.getRating());
+                //
 
                 repo.save(enty_update);
             }

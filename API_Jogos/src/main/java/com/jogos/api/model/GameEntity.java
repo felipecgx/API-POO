@@ -53,7 +53,10 @@
 
         }
 
-        public GameEntity(String name, Date releaseDate, String description, String developer, int peopleInvolved, int soldCopies, String distributor, int score, Double price, String genre, int rating, boolean hasDLC) {
+        public GameEntity(String name, Date releaseDate, String description,
+                          String developer, int peopleInvolved, int soldCopies,
+                          String distributor, int score, Double price,
+                          String genre, int rating, boolean hasDLC     ) {
             this.name = name;
             this.releaseDate = releaseDate;
             this.description = description;
