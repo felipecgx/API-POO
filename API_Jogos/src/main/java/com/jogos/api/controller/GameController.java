@@ -49,7 +49,7 @@
                 return "Esse usuário não tem permição para esse comando";
             }
 
-            retorno = service.validation(game);
+            retorno = service.validation(game);//validation é um exemplo de encapsulamento no gameservice
 
             if(retorno == 1){
                 return "Não pode ter uma quantidade negativa de pessoas envolvidas";

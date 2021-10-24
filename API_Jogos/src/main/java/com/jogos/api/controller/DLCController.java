@@ -94,7 +94,7 @@
             if (retorno == 1){
                 return "Login não encontrado";
             }else if(retorno == 0){
-                return "Esse usuario não tem permição para esse comando";
+                return "Esse usuario não tem permissão para esse comando";
             }
 
             repo.deleteById(id);

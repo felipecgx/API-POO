@@ -1,6 +1,7 @@
     package com.jogos.api.service;
 
     import com.jogos.api.dto.DLCDTO;
+    import com.jogos.api.dto.GameDTO;
     import com.jogos.api.model.DLCEntity;
     import com.jogos.api.model.GameEntity;
     import com.jogos.api.repository.DLCRepository;
@@ -31,10 +32,14 @@
             for(int i = 0; i < DLCList.size();i++){
 
                 DLCEntity enty = DLCList.get(i);
+
                 DLCDTO DTO = new DLCDTO();
 
+                //exclusivos da DLC
                 DTO.setId(enty.getId());
                 DTO.setOwnedGame(enty.getOwnedGame());
+                //
+
                 DTO.setName(enty.getName());
                 DTO.setReleaseDate(enty.getReleaseDate());
                 DTO.setDescription(enty.getDescription());

@@ -2,10 +2,12 @@
 
     import java.util.Date;
 
-    public class DLCDTO extends GameDTO{ // MUDAR DLC PARA EXTENDS
+    public class DLCDTO extends GameDTO{ // EXEMPLO DE HERANÇA
 
         private Long id;
         private String ownedGame;
+
+        /*
         private String name;
         private Date releaseDate;
         private String description;
@@ -17,6 +19,10 @@
         private Double price;
         private String genre;
         private int rating;
+
+         */
+
+        //GameDTO dlcDTO = new GameDTO();
 
         public Long getId() {
             return id;
@@ -33,6 +39,13 @@
         public void setOwnedGame(String ownedGame) {
             this.ownedGame = ownedGame;
         }
+
+
+        // deixar isso para mostrar para o professor como exemplo
+
+        /*  // TODO ESSE CÓDICO NÃO PRECISA POR CAUSA DO EXTENDS
+               ISSO FOI FEITO PARA ECONOMIZAR FUNÇÕES E LINHAS DE CÓDIGO
+
 
         public String getName() {
             return name;
@@ -121,4 +134,7 @@
         public void setRating(int rating) {
             this.rating = rating;
         }
+
+         */
+
     }
