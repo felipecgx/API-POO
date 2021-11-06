@@ -1,0 +1,16 @@
+    package com.jogos.api.service;
+
+    import com.jogos.api.dto.DLCDTO;
+    import com.jogos.api.dto.GameDTO;
+    import com.jogos.api.model.DLCEntity;
+    import com.jogos.api.model.GameEntity;
+    import com.jogos.api.repository.DLCRepository;
+    import com.jogos.api.repository.GameRepository;
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.stereotype.Service;
+    import org.yaml.snakeyaml.events.Event;
+
+    import java.util.ArrayList;
+    import java.util.List;
+    import java.util.Optional;
+
