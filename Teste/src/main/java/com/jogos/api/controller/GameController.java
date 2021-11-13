@@ -10,3 +10,26 @@
     import java.util.ArrayList;
     import java.util.List;
 
+    //endpoints
+    public class GameController {
+        //metodos que executam ações através da internet pela URL
+
+        //expor os dados em URL
+
+        //get->consulta
+        //post->inclusão
+        //put->atualizar
+        //delete->remover
+
+        //metodo que retorna lista de computadores
+        public List<GameDTO> getGames(){ //vai devolver para internet por DTo, agora convertido
+            GameService service = new GameService();//vai buscar pelo Service, que converteu o dto
+            List<GameDTO> dto = service.getGame();//guardar numa variavel com uma lista
+            return dto;
+
+        }
+
+
+
+
+}

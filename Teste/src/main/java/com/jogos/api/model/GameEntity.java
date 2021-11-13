@@ -1,11 +1,13 @@
     package com.jogos.api.model;
 
     import javax.persistence.*;
-    import java.time.LocalDate;
+    import java.util.Date;
 
-
+    //classes que representam tabelas no banco de dados
 
     //usar camelCase
+
+    //Model é o modelo de banco de dados
     @Entity(name="Game-Entity")
     public class GameEntity{// A entidade para definir as informações do bagulho
 
@@ -26,7 +28,7 @@
         private int rating;//faixa etária
 
         @Column(name= "Release_Date") //para mudar o nome na tabela do banco de dados
-        private LocalDate releaseDate;
+        private Date releaseDate;
 
         @Column(name="People_Involved")
         private int peopleInvolved;
@@ -142,11 +144,11 @@
             this.price = price;
         }
 
-        public LocalDate getReleaseDate() {
+        public Date getReleaseDate() {
             return releaseDate;
         }
 
-        public void setReleaseDate(LocalDate releaseDate) {
+        public void setReleaseDate(Date releaseDate) {
             this.releaseDate = releaseDate;
         }
     }
