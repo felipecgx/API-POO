@@ -23,7 +23,7 @@
 
         public List<GameDTO> getGame(){
 
-            List<GameDTO> result = new ArrayList<>();
+            List<GameDTO> result = new ArrayList<>(); // não precisa pois tem autowired
 
             //gameRepository= new GameRepository();//cria o objeto EM MEMÓRIA (se tiver Autowired, não precisa, cria em compilação)
 
