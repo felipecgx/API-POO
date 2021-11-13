@@ -14,12 +14,18 @@
     //regras de negócio
 
     //conversão entre entidade e DTO
+
+    @Service
     public class GameService{
-        private GameRepository gameRepository;//pede para o repositório
+
+        @Autowired//instancia em tempo de compilação (faz o malloc automático)
+        private GameRepository gameRepository; //pede para o repositório
 
         public List<GameDTO> getGame(){
 
             List<GameDTO> result = new ArrayList<>();
+
+            //gameRepository= new GameRepository();//cria o objeto EM MEMÓRIA (se tiver Autowired, não precisa, cria em compilação)
 
             List<GameEntity> games = gameRepository.getGames();//dá a lista de jogos (retorna TODOS os jogos)
 

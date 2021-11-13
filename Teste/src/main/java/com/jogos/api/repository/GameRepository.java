@@ -2,6 +2,7 @@
 
     import com.jogos.api.model.GameEntity;
     import org.springframework.data.jpa.repository.JpaRepository;
+    import org.springframework.stereotype.Repository;
 
     import java.util.ArrayList;
     import java.util.List;
@@ -10,10 +11,15 @@
 
     //para ter acess ao banco de dados pelo GameEntity
 
+    @Repository//marcações para ficar com instâncias automáticas
     public class GameRepository{
 
         public List<GameEntity> getGames(){
             //consultar os games no banco de dados
+
+            //preenchido manualmente (sem Banco de Dados)
+            //GameEntity games = new GameEntity();
+            //games.setName("Elden Ring")...para todos
 
             //vetor de estruturas 'gameEntity'
             return new ArrayList<>();//retornando sem nada por enquanto

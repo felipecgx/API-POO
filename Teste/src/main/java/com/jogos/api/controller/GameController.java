@@ -11,6 +11,8 @@
     import java.util.List;
 
     //endpoints
+
+    @RestController
     public class GameController {
         //metodos que executam ações através da internet pela URL
 
@@ -21,11 +23,18 @@
         //put->atualizar
         //delete->remover
 
+        @Autowired
+        private GameService service;//se liga no service
+
+
         //metodo que retorna lista de computadores
+
+        @GetMapping("/games")
         public List<GameDTO> getGames(){ //vai devolver para internet por DTo, agora convertido
             GameService service = new GameService();//vai buscar pelo Service, que converteu o dto
             List<GameDTO> dto = service.getGame();//guardar numa variavel com uma lista
-            return dto;
+            //pega os dtos convertidos e RETORNA pra web
+            return dto;//pra web
 
         }
 
